@@ -1,0 +1,32 @@
+<h2>Obitos</h2>
+<section>
+    <div *ngIf="obitos.length == 0">
+        nenhum obito cadastrado
+    </div>
+    <ul *ngIf="obitos.length > 0">
+        <li *ngFor="let obito of obitos">
+            {{obito.id}}, {{obito.ufEstado}}, {{obito.falecidoNome}}, {{obito.tipoObito}}
+        </li>
+      
+    </ul>
+   
+</section>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">ID</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Population</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let obito of obitos; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ obito.id }}</td>
+      <td>{{ obito.ufEstado }}</td>
+      <td>{{ obito.falecidoNome }}</td>
+    </tr>
+    </tbody>
+  </table>
